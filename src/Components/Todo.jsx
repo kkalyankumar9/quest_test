@@ -13,7 +13,7 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { ChatIcon } from '@chakra-ui/icons'
-import {  AddIcon,HamburgerIcon } from "@chakra-ui/icons";
+import {  AddIcon,HamburgerIcon,DeleteIcon } from "@chakra-ui/icons";
 import { BsThreeDots } from "react-icons/bs";
 import axios from "axios";
 
@@ -33,7 +33,7 @@ const Todo = () => {
         .get("http://localhost:8080/todo")
         .then((res) => {
           setTodoData(res.data);
-          // Initialize comment counts array with zeros for each todo item
+
           setCommentCounts(Array(res.data.length).fill(0));
         })
         .catch((error) => {
@@ -72,7 +72,7 @@ const Todo = () => {
   
       return `rgb(${r},${g},${b})`;
     };
-  
+    
   return (
     <>
       <Box w={"24.5%"} m={"1%"}>
@@ -116,7 +116,9 @@ const Todo = () => {
                     <ChatIcon /> {commentCounts[i]+1}
                   </Text>
                 ) : ""}
+               
               </Flex>
+           
             </Box>
           ))}
         </Box>
