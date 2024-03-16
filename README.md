@@ -16,13 +16,13 @@ React, Chakra UI & json-server
 --> npm run start
 --> npm run server
 
-![image](https://github.com/kkalyankumar9/quest_test/assets/112814583/21de5f6f-e3f8-4a72-9e98-d329875366b4)
+![image](https://github.com/kkalyankumar9/quest_test/assets/112814583/1b10cb3c-5d98-4eee-a262-bfcbd991d7dc)
 
 ## Before Adding task
-![image](https://github.com/kkalyankumar9/quest_test/assets/112814583/be62b1dc-25a4-49c9-8f32-9691f6a97b3e)
+![image](https://github.com/kkalyankumar9/quest_test/assets/112814583/a489fcdf-b603-468c-a790-9f81519b0957)
 
 ## After Added task
-![image](https://github.com/kkalyankumar9/quest_test/assets/112814583/f94f5a2b-b882-4486-b2a8-ef0feb312e96)
+![image](https://github.com/kkalyankumar9/quest_test/assets/112814583/68688cc0-7cbd-40b5-a280-6bc17512ca69)
 
 ## Deployed link
 https://questdeployed.netlify.app/
