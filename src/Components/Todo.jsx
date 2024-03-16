@@ -9,9 +9,10 @@ import {
   FormControl,
   FormLabel,
   Input,
+  HStack
 } from "@chakra-ui/react";
 import { ChatIcon } from "@chakra-ui/icons";
-import { AddIcon, HamburgerIcon, DeleteIcon } from "@chakra-ui/icons";
+import { AddIcon, HamburgerIcon,DeleteIcon } from "@chakra-ui/icons";
 import { BsThreeDots } from "react-icons/bs";
 import axios from "axios";
 
@@ -28,7 +29,7 @@ const Todo = () => {
 
   const fetchTodoData = () => {
     axios
-      .get("http://localhost:8080/todo")
+      .get("https://jsonserver-quest.onrender.com/todo")
       .then((res) => {
         setTodoData(res.data);
 
@@ -47,7 +48,7 @@ const Todo = () => {
     };
 
     axios
-      .post("http://localhost:8080/todo", data)
+      .post("https://jsonserver-quest.onrender.com/todo", data)
       .then((res) => {
         console.log(res);
         setTodotask("");
@@ -70,7 +71,17 @@ const Todo = () => {
 
     return `rgb(${r},${g},${b})`;
   };
-
+  const handleDelete = (id) => {
+    axios
+      .delete(`https://jsonserver-quest.onrender.com/todo/${id}`)
+      .then(() => {
+        fetchTodoData();
+        console.log("Task removed")
+      })
+      .catch((error) => {
+        console.log("Error fetching todo data:", error);
+      });
+  };
   return (
     <>
       <Box w={"24.5%"} m={"1%"}>
@@ -87,7 +98,7 @@ const Todo = () => {
             {todoData.map((e, i) => (
               <Box
                 m={"2%"}
-                key={i}
+                key={e.id}
                 p={"3%"}
                 bgColor={"white"}
                 textAlign={"left"}
@@ -104,7 +115,8 @@ const Todo = () => {
                 <Heading size="sm" p={"5px"}>
                   {e.todotask}
                 </Heading>
-                <Flex alignItems={"center"} gap={"15px"} p={"5px"}>
+                <Flex justifyContent={"space-between"} alignItems={"center"} gap={"15px"} p={"5px"}>
+                  <HStack>
                   <HamburgerIcon color={"gray"} />
                   {e.comment ? (
                     <Text
@@ -120,7 +132,10 @@ const Todo = () => {
                   ) : (
                     ""
                   )}
+                  </HStack>
+                   <Button color={"gray"} bgColor={"white"} onClick={() => handleDelete(e.id)}><DeleteIcon/></Button>
                 </Flex>
+               
               </Box>
             ))}
           </Box>

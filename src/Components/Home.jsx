@@ -8,7 +8,10 @@ import Done from "./Done";
 const Home = () => {
   return (
     <>
-      <Box display={"flex"} bgColor={"#7b8bdb"} p={4}>
+      <Box display={"flex"} bgColor={"#7b8bdb"} w={"100%"}
+
+      
+      p={4}>
         <Todo />
         <InProgress />
         <Review />

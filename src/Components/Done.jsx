@@ -9,9 +9,10 @@ import {
   FormControl,
   FormLabel,
   Input,
+  HStack
 } from "@chakra-ui/react";
 import { ChatIcon } from "@chakra-ui/icons";
-import { AddIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { AddIcon, HamburgerIcon,DeleteIcon } from "@chakra-ui/icons";
 import { BsThreeDots } from "react-icons/bs";
 import axios from "axios";
 
@@ -28,10 +29,10 @@ const Done = () => {
 
   const fetchTodoData = () => {
     axios
-      .get("http://localhost:8080/done")
+      .get("https://jsonserver-quest.onrender.com/done")
       .then((res) => {
         setDoneData(res.data);
-        // Initialize comment counts array with zeros for each todo item
+     
         setCommentCounts(Array(res.data.length).fill(0));
       })
       .catch((error) => {
@@ -47,7 +48,7 @@ const Done = () => {
     };
 
     axios
-      .post("http://localhost:8080/done", data)
+      .post("https://jsonserver-quest.onrender.com/done", data)
       .then((res) => {
         console.log(res);
         setdonetask("");
@@ -69,6 +70,17 @@ const Done = () => {
     const b = Math.floor(Math.random() * 256);
 
     return `rgb(${r},${g},${b})`;
+  };
+  const handleDelete = (id) => {
+    axios
+      .delete(`https://jsonserver-quest.onrender.com/done/${id}`)
+      .then(() => {
+        fetchTodoData();
+        console.log("Task removed")
+      })
+      .catch((error) => {
+        console.log("Error fetching todo data:", error);
+      });
   };
 
   return (
@@ -104,7 +116,8 @@ const Done = () => {
               <Heading size="sm" p={"5px"}>
                 {e.donetask}
               </Heading>
-              <Flex alignItems={"center"} gap={"15px"} p={"5px"}>
+              <Flex justifyContent={"space-between"} alignItems={"center"} gap={"15px"} p={"5px"}>
+               <HStack>
                 <HamburgerIcon color={"gray"} />
                 {e.comment ? (
                   <Text
@@ -120,6 +133,9 @@ const Done = () => {
                 ) : (
                   ""
                 )}
+                </HStack>
+                <Button color={"grey"} bgColor={"white"} onClick={() => handleDelete(e.id)}><DeleteIcon/></Button>
+
               </Flex>
             </Box>
           ))}
