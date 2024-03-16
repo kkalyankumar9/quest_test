@@ -3,6 +3,7 @@
 ## Tech Stack
 React, Chakra UI & json-server
 
+
 ## File Navigation
 - Components
   - Home.jsx
@@ -23,7 +24,14 @@ React, Chakra UI & json-server
 ## After Added task
 ![image](https://github.com/kkalyankumar9/quest_test/assets/112814583/f94f5a2b-b882-4486-b2a8-ef0feb312e96)
 
+## Deployed link
+https://questdeployed.netlify.app/
 
+## Server link
+https://jsonserver-quest.onrender.com
+
+## Short video
+https://drive.google.com/file/d/1tpwwlAyXqZLli1OZDLkb7z5h0AdZ_13y/view?usp=sharing
 
 
 
