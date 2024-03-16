@@ -1,13 +1,16 @@
 
 # Quest 
 ## Tech Stack
-React,Chakra UI & json-server
+React, Chakra UI & json-server
+
 ## File Navigation
--->App-->Home
-      -->Todo
-      -->IsProgress
-      -->Review
-      -->Done
+- Components
+  - Home.jsx
+  - Todo.jsx
+  - InProgressjsx
+  - Review.jsx
+  - Done.jsx
+     
 ## Run locally in the react app
 --> npm run start
 --> npm run server
