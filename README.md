@@ -2,6 +2,12 @@
 # Quest 
 ## Tech Stack
 React,Chakra UI & json-server
+## File Navigation
+-->App-->Home
+      -->Todo
+      -->IsProgress
+      -->Review
+      -->Done
 ## Run locally in the react app
 --> npm run start
 --> npm run server
