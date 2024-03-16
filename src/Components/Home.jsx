@@ -8,13 +8,7 @@ import Done from "./Done";
 const Home = () => {
   return (
     <>
-      <Box
-        display={{ base: "block", md: "flex" }}
-        bgColor={"#7b8bdb"}
-        p={4}
-        justifyContent="space-around"
-   
-      >
+      <Box display={"flex"} bgColor={"#7b8bdb"} p={4}>
         <Todo />
         <InProgress />
         <Review />

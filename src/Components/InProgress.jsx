@@ -7,13 +7,11 @@ import {
   Text,
   Button,
   FormControl,
-  
   FormLabel,
-
   Input,
 } from "@chakra-ui/react";
-import { ChatIcon } from '@chakra-ui/icons'
-import {  AddIcon,HamburgerIcon } from "@chakra-ui/icons";
+import { ChatIcon } from "@chakra-ui/icons";
+import { AddIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { BsThreeDots } from "react-icons/bs";
 import axios from "axios";
 
@@ -76,7 +74,7 @@ const InProgress = () => {
   return (
     <Box w={"24.5%"} m={"1%"}>
       <Card bgColor={"#f2f3f8"} p={3}>
-        <Flex spacing="4"p={"2%"}>
+        <Flex spacing="4" p={"2%"}>
           <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
             <Box>
               <Heading size="sm">In Progress</Heading>
@@ -90,7 +88,6 @@ const InProgress = () => {
               m={"2%"}
               key={i}
               p={"3%"}
-         
               bgColor={"white"}
               textAlign={"left"}
               borderRadius={"5px"}
@@ -103,18 +100,25 @@ const InProgress = () => {
                 borderRadius={"5px"}
                 p={"5px"}
               ></Box>
-              <Heading size="sm" p={"5px"}>{e.progresstask}</Heading>
+              <Heading size="sm" p={"5px"}>
+                {e.progresstask}
+              </Heading>
               <Flex alignItems={"center"} gap={"15px"} p={"5px"}>
-                <HamburgerIcon   color={"gray"}/>
+                <HamburgerIcon color={"gray"} />
                 {e.comment ? (
-                  <Text onClick={() => {
-                    const newCommentCounts = [...commentCounts];
-                    newCommentCounts[i]++;
-                    setCommentCounts(newCommentCounts);
-                  }}   color={"gray"}>
-                    <ChatIcon /> {commentCounts[i]+1}
+                  <Text
+                    onClick={() => {
+                      const newCommentCounts = [...commentCounts];
+                      newCommentCounts[i]++;
+                      setCommentCounts(newCommentCounts);
+                    }}
+                    color={"gray"}
+                  >
+                    <ChatIcon /> {commentCounts[i] + 1}
                   </Text>
-                ) : ""}
+                ) : (
+                  ""
+                )}
               </Flex>
             </Box>
           ))}
@@ -162,6 +166,4 @@ const InProgress = () => {
   );
 };
 
-
-
-export default InProgress
+export default InProgress;

@@ -6,7 +6,6 @@ React,Chakra UI & json-server
 --> npm run start
 --> npm run server
 
-
 ![image](https://github.com/kkalyankumar9/quest_test/assets/112814583/21de5f6f-e3f8-4a72-9e98-d329875366b4)
 
 ## Before Adding task
