@@ -31,7 +31,7 @@ https://questdeployed.netlify.app/
 https://jsonserver-quest.onrender.com
 
 ## Short video
-https://drive.google.com/file/d/1tpwwlAyXqZLli1OZDLkb7z5h0AdZ_13y/view?usp=sharing
+https://drive.google.com/file/d/12KhEYB7wI0m2uDzgm9-InIF57vFGSxc9/view?usp=sharing
 
 
 
